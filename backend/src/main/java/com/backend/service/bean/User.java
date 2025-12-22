@@ -2,8 +2,11 @@ package com.backend.service.bean;
 
 import com.backend.bean.team.TeamUser;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -22,8 +25,11 @@ public class User implements UserDetails {
     private Long id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String username;
+    @Size(min = 6, message = "Password should have 6 character minimum")
     private String password;
+    @Email(message = "Email format is not correct")
     private String email;
     private Boolean enabled;
     private Boolean accountNonLocked;
@@ -37,7 +43,9 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return this.authorities.stream().map(
+                authority -> new SimpleGrantedAuthority(authority.getName())
+        ).toList();
     }
 
     public Long getId() {
