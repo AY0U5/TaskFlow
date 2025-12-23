@@ -1,6 +1,6 @@
-package com.backend.service.service.facade;
+package com.backend.security.service.facade;
 
-import com.backend.service.bean.Authority;
+import com.backend.security.bean.Authority;
 
 import java.util.List;
 

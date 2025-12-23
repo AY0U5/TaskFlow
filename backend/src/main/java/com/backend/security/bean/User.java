@@ -1,4 +1,4 @@
-package com.backend.service.bean;
+package com.backend.security.bean;
 
 import com.backend.bean.team.TeamUser;
 import jakarta.persistence.*;

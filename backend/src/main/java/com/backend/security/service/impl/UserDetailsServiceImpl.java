@@ -1,7 +1,7 @@
-package com.backend.service.service.impl;
+package com.backend.security.service.impl;
 
-import com.backend.service.bean.User;
-import com.backend.service.dao.UserDao;
+import com.backend.security.bean.User;
+import com.backend.security.dao.UserDao;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

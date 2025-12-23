@@ -1,6 +1,6 @@
 package com.backend.bean.notification;
 
-import com.backend.service.bean.User;
+import com.backend.security.bean.User;
 import jakarta.persistence.*;
 
 @Entity

@@ -1,6 +1,6 @@
 package com.backend.bean.chat;
 
-import com.backend.service.bean.User;
+import com.backend.security.bean.User;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

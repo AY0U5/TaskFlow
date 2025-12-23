@@ -1,8 +1,8 @@
-package com.backend.service.service.impl;
+package com.backend.security.service.impl;
 
-import com.backend.service.bean.Authority;
-import com.backend.service.dao.AuthorityDao;
-import com.backend.service.service.facade.AuthorityService;
+import com.backend.security.bean.Authority;
+import com.backend.security.dao.AuthorityDao;
+import com.backend.security.service.facade.AuthorityService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

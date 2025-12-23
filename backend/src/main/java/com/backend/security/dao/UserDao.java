@@ -1,6 +1,6 @@
-package com.backend.service.dao;
+package com.backend.security.dao;
 
-import com.backend.service.bean.User;
+import com.backend.security.bean.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

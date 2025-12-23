@@ -1,4 +1,4 @@
-package com.backend.service.bean;
+package com.backend.security.bean;
 
 import jakarta.persistence.*;
 
