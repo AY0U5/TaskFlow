@@ -9,11 +9,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class User implements UserDetails {
+public class User implements UserDetails, UserPrincipal {
 
     @Id
     @SequenceGenerator(
@@ -136,5 +137,14 @@ public class User implements UserDetails {
 
     public void setTeamUsers(List<TeamUser> teamUsers) {
         this.teamUsers = teamUsers;
+    }
+
+    public void setAuthorities(List<Authority> authorities) {
+        this.authorities = authorities;
+    }
+
+    @Override
+    public String getName() {
+        return firstName + " " + username;
     }
 }
