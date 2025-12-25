@@ -1,6 +1,7 @@
 package com.backend.bean.project;
 
 import com.backend.bean.team.Team;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 

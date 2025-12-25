@@ -12,6 +12,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static com.backend.security.common.AuthorityNames.*;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -36,6 +38,9 @@ public class SecurityConfig {
                         req.requestMatchers(
                                         "/auth/**"
                         ).permitAll()
+                        .requestMatchers(
+                                "/projects/"
+                        ).hasAnyAuthority(USER, ADMIN)
                         .anyRequest()
                         .authenticated()
                 )

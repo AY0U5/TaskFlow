@@ -1,6 +1,7 @@
 package com.backend.bean.team;
 
 import com.backend.security.bean.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,9 +17,14 @@ public class TeamUser {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties({
+            "password", "name", "authorities", "enabled", "accountNonExpired",
+            "accountNonLocked", "credentialsNonExpired", "teamUsers"
+    })
     private User user;
     @ManyToOne
     @JoinColumn(name = "team_id")
+    @JsonIgnoreProperties("teamUsers")
     private Team team;
     @Enumerated(EnumType.STRING)
     private Role role;

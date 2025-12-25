@@ -1,6 +1,7 @@
 package com.backend.security.bean;
 
 import com.backend.bean.team.TeamUser;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
@@ -38,7 +39,7 @@ public class User implements UserDetails, UserPrincipal {
     private Boolean credentialsNonExpired;
     @OneToMany(mappedBy = "user")
     private List<TeamUser> teamUsers;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Authority> authorities;
 
 

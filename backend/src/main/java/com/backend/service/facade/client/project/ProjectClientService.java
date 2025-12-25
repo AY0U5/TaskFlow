@@ -10,4 +10,6 @@ public interface ProjectClientService {
     void deleteByNameAndTeamId(String name, Long teamId);
 
     List<Project> findAllByTeamIdOrderByCreatedDate(Long teamId);
+
+    Project createProject(Project project);
 }
