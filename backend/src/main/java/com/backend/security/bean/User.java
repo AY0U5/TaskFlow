@@ -39,7 +39,12 @@ public class User implements UserDetails, UserPrincipal {
     private Boolean credentialsNonExpired;
     @OneToMany(mappedBy = "user")
     private List<TeamUser> teamUsers;
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_authorities",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id")
+    )
     private List<Authority> authorities;
 
 
