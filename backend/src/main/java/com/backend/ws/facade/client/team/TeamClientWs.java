@@ -2,7 +2,6 @@ package com.backend.ws.facade.client.team;
 
 import com.backend.bean.team.Team;
 import com.backend.bean.team.TeamUser;
-import com.backend.security.bean.User;
 import com.backend.service.facade.client.team.TeamClientService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

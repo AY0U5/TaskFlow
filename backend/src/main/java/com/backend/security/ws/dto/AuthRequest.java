@@ -6,16 +6,16 @@ import jakarta.validation.constraints.Size;
 public class AuthRequest {
 
     @Email(message = "Email format is not correct")
-    private String email;
+    private String username;
     @Size(min = 6, message = "Password should have 6 character minimum")
     private String password;
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

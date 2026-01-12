@@ -9,9 +9,7 @@ import java.util.List;
 public interface UserService {
     User findByUsername(String username);
 
-    User findByEmail(String email);
-
-    Boolean existsByUsername(String username);
+    boolean existsByLogName(String logName);
 
     List<User> findAll();
 

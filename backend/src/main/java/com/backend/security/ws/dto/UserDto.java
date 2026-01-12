@@ -10,11 +10,11 @@ public class UserDto {
     private Long id;
     private String firstName;
     private String lastName;
-    private String username;
+    private String logName;
     @Size(min = 6, message = "Password should have 6 character minimum")
     private String password;
     @Email(message = "Email format is not correct")
-    private String email;
+    private String username;
     private Boolean enabled;
     private Boolean accountNonLocked;
     private Boolean accountNonExpired;
@@ -60,14 +60,6 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Boolean getEnabled() {
@@ -116,5 +108,13 @@ public class UserDto {
 
     public void setAuthorities(List<AuthorityDto> authorities) {
         this.authorities = authorities;
+    }
+
+    public String getLogName() {
+        return logName;
+    }
+
+    public void setLogName(String logName) {
+        this.logName = logName;
     }
 }

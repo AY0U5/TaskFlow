@@ -43,19 +43,9 @@ public class UserWs {
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
-    @GetMapping("/email/{email}")
-    public ResponseEntity<UserDto> findByEmail(@PathVariable String email) {
-        User byEmail = service.findByEmail(email);
-        if (byEmail == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        UserDto dto = converter.toDto(byEmail);
-        return new ResponseEntity<>(dto,HttpStatus.OK);
-    }
-
-    @GetMapping("/exist/username/{username}")
-    public ResponseEntity<Boolean> existsByUsername(@PathVariable String username) {
-        Boolean bool = service.existsByUsername(username);
+    @GetMapping("/exist/logName/{logName}")
+    public ResponseEntity<Boolean> existsByLogName(@PathVariable String logName) {
+        Boolean bool = service.existsByLogName(logName);
         return new ResponseEntity<>(bool,HttpStatus.OK);
     }
 

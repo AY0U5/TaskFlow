@@ -27,12 +27,12 @@ public class User implements UserDetails, UserPrincipal {
     private Long id;
     private String firstName;
     private String lastName;
-    @Column(unique = true)
+    @Email(message = "Email format is not correct")
     private String username;
     @Size(min = 6, message = "Password should have 6 character minimum")
     private String password;
-    @Email(message = "Email format is not correct")
-    private String email;
+    @Column(unique = true)
+    private String logName;
     private Boolean enabled;
     private Boolean accountNonLocked;
     private Boolean accountNonExpired;
@@ -40,11 +40,6 @@ public class User implements UserDetails, UserPrincipal {
     @OneToMany(mappedBy = "user")
     private List<TeamUser> teamUsers;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_authorities",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "authority_id")
-    )
     private List<Authority> authorities;
 
 
@@ -97,14 +92,6 @@ public class User implements UserDetails, UserPrincipal {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public Boolean getEnabled() {
         return enabled;
     }
@@ -147,6 +134,14 @@ public class User implements UserDetails, UserPrincipal {
 
     public void setAuthorities(List<Authority> authorities) {
         this.authorities = authorities;
+    }
+
+    public String getLogName() {
+        return logName;
+    }
+
+    public void setLogName(String logName) {
+        this.logName = logName;
     }
 
     @Override

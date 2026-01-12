@@ -54,13 +54,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByEmail(String email) {
-        return dao.findByEmail(email);
-    }
-
-    @Override
-    public Boolean existsByUsername(String username) {
-        return dao.existsByUsername(username);
+    public boolean existsByLogName(String logName) {
+        return dao.existsByLogName(logName);
     }
 
     @Override
@@ -89,7 +84,7 @@ public class UserServiceImpl implements UserService {
     public Token authenticate(AuthRequest request){
         var authenticate = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
+                        request.getUsername(),
                         request.getPassword()
                 )
         );
