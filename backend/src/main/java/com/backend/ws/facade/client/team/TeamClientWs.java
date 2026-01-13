@@ -18,7 +18,7 @@ public class TeamClientWs {
         this.service = service;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addMember")
     public Team addMember(@RequestBody TeamUser teamUser) {
         return service.addMember(teamUser.getTeam(), teamUser.getUser());
     }

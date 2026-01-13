@@ -74,9 +74,9 @@ public class UserWs {
         return new ResponseEntity<>(dto,HttpStatus.OK);
     }
 
-    @DeleteMapping("/username/{username}")
-    public ResponseEntity<Void> deleteByUsername(@PathVariable String username) {
-        service.deleteByUsername(username);
+    @DeleteMapping("/logName/{logName}")
+    public ResponseEntity<Void> deleteByLogName(@PathVariable String logName) {
+        service.deleteByLogName(logName);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

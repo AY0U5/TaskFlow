@@ -11,4 +11,5 @@ public interface UserDao extends JpaRepository<User,Long> {
     User findByUsername(String username);
     boolean existsByLogName(String logName);
     void deleteByUsername(String username);
+    void deleteByLogName(String logName);
 }

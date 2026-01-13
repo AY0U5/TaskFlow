@@ -17,5 +17,5 @@ public interface UserService {
 
     Token authenticate(AuthRequest request);
 
-    void deleteByUsername(String username);
+    void deleteByLogName(String username);
 }

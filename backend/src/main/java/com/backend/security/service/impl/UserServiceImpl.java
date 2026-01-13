@@ -1,5 +1,6 @@
 package com.backend.security.service.impl;
 
+import com.backend.bean.team.TeamUser;
 import com.backend.security.bean.Authority;
 import com.backend.security.bean.Token;
 import com.backend.security.bean.User;
@@ -8,6 +9,7 @@ import com.backend.security.dao.UserDao;
 import com.backend.security.service.facade.AuthorityService;
 import com.backend.security.service.facade.UserService;
 import com.backend.security.ws.dto.AuthRequest;
+import com.backend.service.facade.client.team.TeamUserClientService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,6 +32,7 @@ public class UserServiceImpl implements UserService {
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
     private final TokenDao tokenDao;
+    private final TeamUserClientService teamUserClientService;
 
     public UserServiceImpl(
             UserDao dao,
@@ -37,7 +40,8 @@ public class UserServiceImpl implements UserService {
             PasswordEncoder passwordEncoder,
             AuthenticationManager authenticationManager,
             JwtService jwtService,
-            TokenDao tokenDao
+            TokenDao tokenDao,
+            TeamUserClientService teamUserClientService
     ) {
         this.dao = dao;
         this.authorityService = authorityService;
@@ -45,6 +49,7 @@ public class UserServiceImpl implements UserService {
         this.authenticationManager = authenticationManager;
         this.jwtService = jwtService;
         this.tokenDao = tokenDao;
+        this.teamUserClientService = teamUserClientService;
     }
 
 
@@ -103,7 +108,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void deleteByUsername(String username) {
-        dao.deleteByUsername(username);
+    public void deleteByLogName(String logName) {
+        List<TeamUser> byUserLogName = teamUserClientService.findByUserLogName(logName);
+        if (byUserLogName != null) {
+            for (TeamUser teamUser : byUserLogName) {
+                teamUserClientService.deleteTeamUser(teamUser);
+            }
+        }
+        dao.deleteByLogName(logName);
     }
 }
