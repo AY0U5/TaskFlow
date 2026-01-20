@@ -25,12 +25,12 @@ public class Token {
         this.id = id;
     }
 
-    public String getToken() {
+    public String getJwt() {
         return jwt;
     }
 
-    public void setToken(String token) {
-        this.jwt = token;
+    public void setJwt(String jwt) {
+        this.jwt = jwt;
     }
 
     public LocalDateTime getExpiredAt() {

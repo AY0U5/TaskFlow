@@ -1,3 +1,4 @@
-class Environment {
-  private baseAPI= 'http://localhost:8080/';
+export const environment = {
+
+  baseUrl: 'http://localhost:8080',
 }

@@ -98,7 +98,7 @@ public class UserServiceImpl implements UserService {
         claims.put("fullName", user.getFirstName() + " " + user.getLastName());
         String token = jwtService.generateToken(claims, user);
         Token tok = new Token();
-        tok.setToken(token);
+        tok.setJwt(token);
         tok.setUser(user);
         tok.setCreatedAt(LocalDateTime.now());
         tok.setExpiredAt(LocalDateTime.now().plusHours(1));

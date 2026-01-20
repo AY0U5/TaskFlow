@@ -3,17 +3,19 @@
     <div class="flex flex-col gap-5 w-72">
       <div class="flex flex-col">
         <label for="username">Email</label>
-        <input id="username" type="email" placeholder="example@gmail.com"
+        <input id="username" type="email" placeholder="example@gmail.com" [(ngModel)]="email"
                class="border border-gray-300 h-10 rounded px-3"
         >
       </div>
       <div class="flex flex-col">
         <label for="password">Password</label>
-        <input id="password" type="password" placeholder="password"
+        <input id="password" type="password" placeholder="password" [(ngModel)]="password"
                class="border border-gray-300 h-10 rounded px-3"
         >
       </div>
-      <div class="bg-blue-400 text-center text-white font-medium py-2 rounded">
+      <div class="bg-blue-400 text-center text-white font-medium py-2 rounded"
+           (click)="login()"
+      >
         Sign In
       </div>
     </div>

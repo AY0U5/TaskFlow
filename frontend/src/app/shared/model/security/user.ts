@@ -8,11 +8,11 @@ export class User {
   public username:string
   public password:string
   public logName:string
-  public enabled:null |boolean
-  public accountNonLocked:null |boolean
-  public accountNonExpired:null |boolean
-  public credentialsNonExpired:null |boolean
-  public teamUsers : Array<TeamUser>
+  public enabled: true
+  public accountNonLocked:true
+  public accountNonExpired:true
+  public credentialsNonExpired:true
+  //public teamUsers : Array<TeamUser>
   public authorities: Array<Authority>
 
 
@@ -23,7 +23,11 @@ export class User {
     this.username = "";
     this.password = "";
     this.logName = "";
-    this.teamUsers = new Array<TeamUser>();
+    this.enabled=true
+    this.accountNonLocked=true
+    this.accountNonExpired=true
+    this.credentialsNonExpired=true
+    //this.teamUsers = new Array<TeamUser>();
     this.authorities = new Array<Authority>();
   }
 }
