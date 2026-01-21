@@ -6,8 +6,9 @@ import {authGuard} from "./shared/guard/auth.guard";
 export const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  /*{
-    path: 'dashboard',
+  {
+    path: 'collaborators',
+    loadChildren : ()=> import("../app/pages/client/client.routes").then((r) => r.ClientRoutes),
     canActivate: [authGuard]
-  }*/
+  }
 ];

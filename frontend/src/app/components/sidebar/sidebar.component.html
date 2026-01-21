@@ -1,0 +1,23 @@
+<div class="grid grid-rows-12 h-screen justify-center">
+  <div class="row-span-1">
+    FlowTask
+  </div>
+  <div class="row-span-10">
+    <div *ngFor="let menu of menuItems"
+         class="flex gap-1 items-center hover:bg-gray-200 cursor-pointer"
+    >
+      <lucide-icon name="{{menu.icon}}"></lucide-icon>
+      <span>{{menu.name}}</span>
+    </div>
+    <div>Upgrade</div>
+  </div>
+  <div class="row-span-1">
+    <div class="flex items-center gap-2 hover:bg-gray-200 cursor-pointer">
+      <div class="rounded-full bg-gray-400 w-10 h-10"></div>
+      <div>
+        <div class="font-medium">AYMH.1</div>
+        <div class="font-light">mahdaoui&commat;gmail.com</div>
+      </div>
+    </div>
+  </div>
+</div>
