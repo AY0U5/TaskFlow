@@ -15,9 +15,9 @@ import {LucideAngularModule} from "lucide-angular";
 export class SidebarComponent {
   menuItems = [
     {name: "Dashboard", icon: 'layout-dashboard'},
-    {name: "Projects", icon: 'layout-dashboard'},
-    {name: "Teams", icon: 'layout-dashboard'},
-    {name: "Tasks", icon: 'layout-dashboard'},
-    {name: "Settings", icon: 'layout-dashboard'},
+    {name: "Projects", icon: 'presentation'},
+    {name: "Teams", icon: 'users'},
+    {name: "Tasks", icon: 'clipboard-list'},
+    {name: "Settings", icon: 'settings'},
   ]
 }

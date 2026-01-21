@@ -1,11 +1,12 @@
-export class Authority {
+import {Base} from "../util/base";
 
-  public id: null | number;
+export class Authority extends Base{
+
   public name: string;
 
 
   constructor() {
-    this.id = null;
+    super()
     this.name = ""
   }
 }

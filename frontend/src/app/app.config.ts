@@ -5,7 +5,14 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import {provideHttpClient, withInterceptors} from "@angular/common/http";
 import {jwtInterceptor} from "./shared/interceptor/jwt.interceptor";
-import {LayoutDashboard, LucideAngularModule} from "lucide-angular";
+import {
+  LayoutDashboard,
+  LucideAngularModule,
+  Presentation,
+  Users,
+  ClipboardList,
+  Settings
+} from "lucide-angular";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,7 +23,11 @@ export const appConfig: ApplicationConfig = {
     ),
     importProvidersFrom(
       LucideAngularModule.pick({
-        LayoutDashboard
+        LayoutDashboard,
+        Presentation,
+        Users,
+        ClipboardList,
+        Settings
       })
     )
   ]

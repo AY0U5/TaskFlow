@@ -1,8 +1,8 @@
 import {User} from "./user";
+import {Base} from "../util/base";
 
-export class Token {
+export class Token extends Base{
 
-  public id: null | number
   public jwt: string
   public expiredAt: Date
   public createdAt: Date
@@ -10,7 +10,7 @@ export class Token {
 
 
   constructor() {
-    this.id = null
+    super();
     this.jwt = "";
     this.expiredAt = new Date();
     this.createdAt = new Date();

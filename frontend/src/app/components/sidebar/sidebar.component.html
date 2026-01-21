@@ -1,12 +1,12 @@
-<div class="grid grid-rows-12 h-screen justify-center">
-  <div class="row-span-1">
+<div class="grid grid-rows-12 h-full justify-center">
+  <div class="row-span-1 text-xl font-bold flex justify-center">
     FlowTask
   </div>
-  <div class="row-span-10">
+  <div class="row-span-10 mt-36">
     <div *ngFor="let menu of menuItems"
-         class="flex gap-1 items-center hover:bg-gray-200 cursor-pointer"
+         class="flex gap-x-2 items-center mb-5 hover:bg-gray-200 cursor-pointer"
     >
-      <lucide-icon name="{{menu.icon}}"></lucide-icon>
+      <lucide-icon name="{{menu.icon}}" size="20"></lucide-icon>
       <span>{{menu.name}}</span>
     </div>
     <div>Upgrade</div>

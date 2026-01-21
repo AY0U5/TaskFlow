@@ -1,8 +1,8 @@
 import {Authority} from "./authority";
+import {Base} from "../util/base";
 
-export class User {
+export class User extends Base{
 
-  public id:null | number
   public firstName:string
   public lastName:string
   public username:string
@@ -17,7 +17,7 @@ export class User {
 
 
   constructor() {
-    this.id = null
+    super();
     this.firstName = "";
     this.lastName = "";
     this.username = "";
