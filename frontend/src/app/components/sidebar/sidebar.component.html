@@ -1,22 +1,29 @@
-<div class="grid grid-rows-12 h-full justify-center">
-  <div class="row-span-1 text-xl font-bold flex justify-center">
-    FlowTask
+<div class="grid grid-rows-12 h-full">
+  <div class="row-span-1 flex items-center justify-between px-2">
+    <div [class]="isOpen ? 'font-bold' : 'font-bold hidden'">FlowTask</div>
+    <lucide-icon name="panel-left" size="20" color="gray" [strokeWidth]="1.5"
+      class="hover:bg-gray-100 m-2 rounded cursor-pointer" (click)="toggleSideBar()"
+    ></lucide-icon>
   </div>
-  <div class="row-span-10 mt-36">
-    <div *ngFor="let menu of menuItems"
-         class="flex gap-x-2 items-center py-2 px-2 hover:bg-gray-200 cursor-pointer rounded-lg"
-    >
-      <lucide-icon name="{{menu.icon}}" size="20"></lucide-icon>
-      <span>{{menu.name}}</span>
+  <div class="row-span-10 overflow-auto px-2">
+    <div *ngFor="let menu of menuItems">
+      <div class="flex gap-x-2 items-center py-2 px-1 hover:bg-gray-200 cursor-pointer rounded-lg">
+        <lucide-icon name="{{menu.icon}}" size="17" color="gray" [strokeWidth]="1.5"></lucide-icon>
+        <span class="text-xs font-light text-gray-500">{{menu.name}}</span>
+      </div>
+      <div *ngIf="isOpen">
+        <div *ngFor="let item of menu.items"
+          class="py-1 px-2 text-sm font-light hover:bg-gray-200 cursor-pointer rounded-lg"
+        >{{item}}</div>
+      </div>
     </div>
-    <div>Upgrade</div>
   </div>
-  <div class="row-span-1">
+  <div class="row-span-1 border-t px-2">
     <div class="flex items-center gap-2 hover:bg-gray-200 cursor-pointer">
-      <div class="rounded-full bg-gray-400 w-10 h-10"></div>
-      <div>
-        <div class="font-medium">AYMH.1</div>
-        <div class="font-light">mahdaoui&commat;gmail.com</div>
+      <div class="rounded-full bg-gray-400 w-7 h-7"></div>
+      <div class="">
+        <div class="text-sm font-medium">AYMH.1</div>
+        <div class="text-sm font-light">mahdaoui&commat;gmail.com</div>
       </div>
     </div>
   </div>

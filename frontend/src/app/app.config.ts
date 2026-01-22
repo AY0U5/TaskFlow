@@ -11,7 +11,8 @@ import {
   Presentation,
   Users,
   ClipboardList,
-  Settings
+  Settings,
+  PanelLeft
 } from "lucide-angular";
 
 export const appConfig: ApplicationConfig = {
@@ -27,7 +28,8 @@ export const appConfig: ApplicationConfig = {
         Presentation,
         Users,
         ClipboardList,
-        Settings
+        Settings,
+        PanelLeft
       })
     )
   ]
