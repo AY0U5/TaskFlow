@@ -12,7 +12,10 @@ import {
   Users,
   ClipboardList,
   Settings,
-  PanelLeft
+  PanelLeft,
+  ChevronDown,
+  ChevronRight,
+  Calendar
 } from "lucide-angular";
 
 export const appConfig: ApplicationConfig = {
@@ -29,7 +32,10 @@ export const appConfig: ApplicationConfig = {
         Users,
         ClipboardList,
         Settings,
-        PanelLeft
+        PanelLeft,
+        ChevronDown,
+        ChevronRight,
+        Calendar
       })
     )
   ]

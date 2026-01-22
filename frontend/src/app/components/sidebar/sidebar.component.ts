@@ -21,6 +21,7 @@ export class SidebarComponent {
     {
       name: "Projects",
       icon: "presentation",
+      expanded: true,
       items: [
         "FlowTask Platform",
         "User Analytics Revamp",
@@ -31,6 +32,7 @@ export class SidebarComponent {
     {
       name: "Teams",
       icon: "users",
+      expanded: false,
       items: [
         "Frontend Team",
         "Backend Team",
@@ -41,12 +43,17 @@ export class SidebarComponent {
     {
       name: "Tasks",
       icon: "clipboard-list",
+      expanded: false,
       items: [
         "Sprint Planning",
         "Bug Fixes",
         "Feature Development",
         "Code Review"
       ]
+    },
+    {
+      name: "Calendar",
+      icon: "calendar",
     }
   ];
 
@@ -61,5 +68,10 @@ export class SidebarComponent {
 
   set isOpen(value: boolean) {
     this._isOpen = value;
+  }
+
+
+  openItem(menu: any) {
+    return menu.expanded = !menu.expanded;
   }
 }

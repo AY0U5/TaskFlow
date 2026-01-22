@@ -2,28 +2,31 @@
   <div class="row-span-1 flex items-center justify-between px-2">
     <div [class]="isOpen ? 'font-bold' : 'font-bold hidden'">FlowTask</div>
     <lucide-icon name="panel-left" size="20" color="gray" [strokeWidth]="1.5"
-      class="hover:bg-gray-100 m-2 rounded cursor-pointer" (click)="toggleSideBar()"
+                 class="hover:bg-gray-100 m-2 rounded cursor-pointer" (click)="toggleSideBar()"
     ></lucide-icon>
   </div>
   <div class="row-span-10 overflow-auto px-2">
-    <div *ngFor="let menu of menuItems">
-      <div class="flex gap-x-2 items-center py-2 px-1 hover:bg-gray-200 cursor-pointer rounded-lg">
-        <lucide-icon name="{{menu.icon}}" size="17" color="gray" [strokeWidth]="1.5"></lucide-icon>
-        <span class="text-xs font-light text-gray-500">{{menu.name}}</span>
+    <div *ngFor="let menu of menuItems" class="mb-4">
+      <div class="flex items-center justify-between py-2 px-1 cursor-pointer" (click)="openItem(menu)">
+        <div class="flex gap-x-2 items-center">
+          <lucide-icon name="{{menu.icon}}" size="17" color="gray" [strokeWidth]="1.5"></lucide-icon>
+          <span class="text-xs font-semibold text-gray-500">{{menu.name}}</span>
+        </div>
+        <lucide-icon *ngIf="menu.items != null" [name]="menu.expanded ? 'chevron-down':'chevron-right'" size="17" color="gray" [strokeWidth]="1.5"></lucide-icon>
       </div>
-      <div *ngIf="isOpen">
+      <div *ngIf="menu.expanded">
         <div *ngFor="let item of menu.items"
-          class="py-1 px-2 text-sm font-light hover:bg-gray-200 cursor-pointer rounded-lg"
+          class="py-1 px-4 text-sm font-light hover:bg-gray-200 cursor-pointer rounded-lg"
         >{{item}}</div>
       </div>
     </div>
   </div>
-  <div class="row-span-1 border-t px-2">
-    <div class="flex items-center gap-2 hover:bg-gray-200 cursor-pointer">
+  <div class="row-span-1 border-t px-2 place-content-center">
+    <div class="flex items-center gap-2 px-2 py-1 hover:bg-gray-200 cursor-pointer rounded">
       <div class="rounded-full bg-gray-400 w-7 h-7"></div>
       <div class="">
-        <div class="text-sm font-medium">AYMH.1</div>
-        <div class="text-sm font-light">mahdaoui&commat;gmail.com</div>
+        <div class="text-xs font-medium">AYMH.1</div>
+        <div class="text-xs font-light">mahdaoui&commat;gmail.com</div>
       </div>
     </div>
   </div>
