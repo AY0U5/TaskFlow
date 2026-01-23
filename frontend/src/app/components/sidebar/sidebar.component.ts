@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
 import {LucideAngularModule} from "lucide-angular";
+import {CommonService} from "../../shared/service/common/common.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sidebar',
@@ -15,7 +17,6 @@ import {LucideAngularModule} from "lucide-angular";
 })
 export class SidebarComponent {
 
-  private _isOpen : boolean = true;
   menuItems = [
     { name: "Dashboard", icon: "layout-dashboard" },
     {
@@ -57,21 +58,34 @@ export class SidebarComponent {
     }
   ];
 
+  constructor(
+    private commonService: CommonService,
+    private router: Router
+  ) {
+  }
+
   public toggleSideBar(){
     this.isOpen = !this.isOpen;
+    this.menuItems.forEach(item => {
+      item.expanded = false;
+    })
   }
 
 
   get isOpen(): boolean {
-    return this._isOpen;
+    return this.commonService.isOpen;
   }
 
   set isOpen(value: boolean) {
-    this._isOpen = value;
+    this.commonService.isOpen = value;
   }
 
 
   openItem(menu: any) {
-    return menu.expanded = !menu.expanded;
+    if (this.isOpen) {
+      menu.expanded = !menu.expanded;
+    }else {
+      this.router.navigate(['/collaborators/'+menu.name.toLowerCase()]);
+    }
   }
 }

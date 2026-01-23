@@ -1,11 +1,14 @@
 <div class="flex items-center justify-between w-full">
+  <lucide-icon name="panel-left" size="25" color="gray" [strokeWidth]="1.5"
+               class="md:hidden hover:bg-gray-100 m-2 rounded cursor-pointer"
+  ></lucide-icon>
   <input
-    class="bg-gray-100 py-1 px-4 w-96 rounded border-s"
+    class="flex-1 bg-gray-50 py-1 px-4 rounded-full border min-w-1 md:max-w-96"
     type="text"
     placeholder="Search Project ..."
   >
   <div
-    class="bg-blue-200 px-4 py-1 rounded cursor-pointer"
+    class="md:block font-semibold text-sm bg-blue-200 px-4 py-1 rounded cursor-pointer hidden"
   >
     New Project
   </div>
