@@ -1,6 +1,35 @@
 import { Routes } from '@angular/router';
-import {DashboardComponent} from "./dashboard/dashboard.component";
+import {ClientLayoutComponent} from "./client-layout/client-layout.component";
 
 export const ClientRoutes: Routes = [
-  {path: 'dashboard', component: DashboardComponent},
+  {
+    path: '',
+    component: ClientLayoutComponent,
+    children : [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./dashboard/dashboard.component')
+            .then(m => m.DashboardComponent)
+      },
+      {
+        path: 'projects',
+        loadComponent: () =>
+          import('./project/project.component')
+            .then(m => m.ProjectComponent)
+      },
+      {
+        path: 'tasks',
+        loadComponent: () =>
+          import('./task/task.component')
+            .then(m => m.TaskComponent)
+      },
+      {
+        path: 'teams',
+        loadComponent: () =>
+          import('./team/team.component')
+            .then(m => m.TeamComponent)
+      },
+    ]
+  },
 ];

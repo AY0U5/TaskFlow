@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {LucideAngularModule} from "lucide-angular";
+import {CommonService} from "../../shared/service/common/common.service";
 
 @Component({
   selector: 'app-topbar',
@@ -12,4 +13,10 @@ import {LucideAngularModule} from "lucide-angular";
 })
 export class TopbarComponent {
 
+  constructor(private common:CommonService) {
+  }
+
+  showSideBar() {
+    this.common.isOpen = !this.common.isOpen;
+  }
 }

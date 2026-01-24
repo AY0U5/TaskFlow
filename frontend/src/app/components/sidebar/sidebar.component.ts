@@ -18,17 +18,23 @@ import {Router} from "@angular/router";
 export class SidebarComponent {
 
   menuItems = [
-    { name: "Dashboard", icon: "layout-dashboard" },
+    {
+      name: "Dashboard",
+      icon: "layout-dashboard",
+      path: '',
+
+    },
     {
       name: "Projects",
       icon: "presentation",
-      expanded: true,
+      expanded: false,
       items: [
         "FlowTask Platform",
         "User Analytics Revamp",
         "Mobile App Redesign",
         "Payment Integration"
-      ]
+      ],
+      path: '/projects',
     },
     {
       name: "Teams",
@@ -39,7 +45,8 @@ export class SidebarComponent {
         "Backend Team",
         "Data & Analytics",
         "Product Management"
-      ]
+      ],
+      path: '/teams',
     },
     {
       name: "Tasks",
@@ -50,7 +57,8 @@ export class SidebarComponent {
         "Bug Fixes",
         "Feature Development",
         "Code Review"
-      ]
+      ],
+      path: '/tasks',
     },
     {
       name: "Calendar",
@@ -85,7 +93,7 @@ export class SidebarComponent {
     if (this.isOpen) {
       menu.expanded = !menu.expanded;
     }else {
-      this.router.navigate(['/collaborators/'+menu.name.toLowerCase()]);
+      this.router.navigate(['/collaborators'+menu.path]);
     }
   }
 }

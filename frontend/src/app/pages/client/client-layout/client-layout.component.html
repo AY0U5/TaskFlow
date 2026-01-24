@@ -1,0 +1,15 @@
+<div class="flex w-screen">
+  <div [class]="isOpen ?
+       'hidden md:flex w-64 border-r h-screen'
+       :'md:flex h-screen border-r'">
+    <app-sidebar class="w-full z-10 flex-1"/>
+  </div>
+  <div class="flex-1 p-5">
+    <div class="place-content-center">
+      <app-topbar/>
+    </div>
+    <div class="">
+      <router-outlet/>
+    </div>
+  </div>
+</div>
