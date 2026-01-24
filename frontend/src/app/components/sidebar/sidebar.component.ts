@@ -88,12 +88,21 @@ export class SidebarComponent {
     this.commonService.isOpen = value;
   }
 
+  get isMobileOpen(): boolean {
+    return this.commonService.isMobileOpen;
+  }
+
+  set isMobileOpen(value: boolean) {
+    this.commonService.isMobileOpen = value;
+  }
+
 
   openItem(menu: any) {
     if (this.isOpen) {
       menu.expanded = !menu.expanded;
     }else {
       this.router.navigate(['/collaborators'+menu.path]);
+      this.isMobileOpen = false;
     }
   }
 }

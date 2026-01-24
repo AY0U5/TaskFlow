@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class CommonService {
 
   private _isOpen : boolean = true;
-  private _isShow : boolean = false;
+  private _isMobileOpen : boolean = false;
   constructor() { }
 
 
@@ -19,11 +19,11 @@ export class CommonService {
   }
 
 
-  get isShow(): boolean {
-    return this._isShow;
+  get isMobileOpen(): boolean {
+    return this._isMobileOpen;
   }
 
-  set isShow(value: boolean) {
-    this._isShow = value;
+  set isMobileOpen(value: boolean) {
+    this._isMobileOpen = value;
   }
 }

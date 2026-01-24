@@ -16,7 +16,15 @@ export class TopbarComponent {
   constructor(private common:CommonService) {
   }
 
+  get isMobileOpen(): boolean {
+    return this.common.isMobileOpen;
+  }
+
+  set isMobileOpen(value: boolean) {
+    this.common.isMobileOpen = value;
+  }
+
   showSideBar() {
-    this.common.isOpen = !this.common.isOpen;
+    this.isMobileOpen = true
   }
 }

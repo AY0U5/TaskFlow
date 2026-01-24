@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize : {
+        xxs: ['8px', '16px']
+      }
     },
     screens: {
       xs: "320px",
@@ -13,7 +16,7 @@ module.exports = {
       lg: "1024px",
       xl: "1440px",
       xxl: "2560px",
-    }
+    },
   },
   plugins: [],
 }
