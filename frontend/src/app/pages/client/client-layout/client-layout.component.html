@@ -6,10 +6,11 @@
   ></div>
   <div
     class="fixed md:static z-50 h-full bg-white border-r transition-all duration-300"
+    [class.hidden]="!isMobileOpen"
+    [class.block]="isMobileOpen"
+    [class.md:block]="true"
     [class.w-64]="isOpen"
     [class.w-12]="!isOpen"
-    [class.-translate-x-full]="!isMobileOpen && !isOpen"
-    [class.translate-x-0]="isMobileOpen || isOpen"
   >
     <app-sidebar class="w-full"/>
   </div>

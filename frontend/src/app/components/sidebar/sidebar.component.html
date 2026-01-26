@@ -13,15 +13,12 @@
           <lucide-icon name="{{menu.icon}}" size="17" [strokeWidth]="1.6"></lucide-icon>
           <span [class]="isOpen ? 'font-semibold text-xs':'hidden'">{{menu.name}}</span>
         </div>
-        <lucide-icon *ngIf="menu.items != null" [name]="menu.expanded ? 'chevron-down':'chevron-right'"
-                     size="17" color="gray" [strokeWidth]="1.5"
-                     [class]="isOpen ?'flex':'hidden'"
-        ></lucide-icon>
       </div>
       <div *ngIf="menu.expanded" class="flex flex-col justify-center cursor-pointer gap-y-1">
         <div *ngFor="let item of menu.items"
              class="cursor-pointer hover:bg-gray-100 px-6 py-1 rounded text-sm font-normal"
         >{{item}}</div>
+        <div class="text-xxs font-semibold px-6 text-gray-400">More +</div>
       </div>
     </div>
   </div>

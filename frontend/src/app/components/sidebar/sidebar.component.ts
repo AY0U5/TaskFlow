@@ -27,7 +27,7 @@ export class SidebarComponent {
     {
       name: "Projects",
       icon: "presentation",
-      expanded: false,
+      expanded: true,
       items: [
         "FlowTask Platform",
         "User Analytics Revamp",
@@ -39,7 +39,7 @@ export class SidebarComponent {
     {
       name: "Teams",
       icon: "users",
-      expanded: false,
+      expanded: true,
       items: [
         "Frontend Team",
         "Backend Team",
@@ -51,7 +51,7 @@ export class SidebarComponent {
     {
       name: "Tasks",
       icon: "clipboard-list",
-      expanded: false,
+      expanded: true,
       items: [
         "Sprint Planning",
         "Bug Fixes",
@@ -73,10 +73,14 @@ export class SidebarComponent {
   }
 
   public toggleSideBar(){
-    this.isOpen = !this.isOpen;
-    this.menuItems.forEach(item => {
-      item.expanded = false;
-    })
+    if (window.innerWidth < 768) {
+      this.isMobileOpen = !this.isMobileOpen;
+    } else {
+      this.isOpen = !this.isOpen;
+      this.menuItems.forEach(item => {
+        item.expanded = !item.expanded;
+      })
+    }
   }
 
 
@@ -98,11 +102,7 @@ export class SidebarComponent {
 
 
   openItem(menu: any) {
-    if (this.isOpen) {
-      menu.expanded = !menu.expanded;
-    }else {
       this.router.navigate(['/collaborators'+menu.path]);
       this.isMobileOpen = false;
-    }
   }
 }
