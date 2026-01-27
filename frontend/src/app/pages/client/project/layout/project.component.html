@@ -1,0 +1,31 @@
+<div class="px-2">
+  <div>
+    <div class="font-normal text-xs">last week</div>
+    <div class="flex flex-wrap gap-4 mt-2">
+      <div class="flex-1 min-w-[260px] max-w-[400px]" *ngFor="let project of projects">
+        <div class="flex flex-col p-2 border rounded h-full">
+          <div class="flex justify-between items-center">
+            <div class="font-semibold text-sm truncate">{{project.name}}</div>
+            <div class="font-semibold text-xxs p-1 bg-blue-100 rounded">{{project.status.replace('_',' ')}}</div>
+          </div>
+          <div class="font-extralight text-xs mt-2">{{project.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5">
+    <div class="font-normal text-xs">last 30 days</div>
+    <div class="flex flex-wrap gap-4 mt-2">
+      <div class="flex-1 min-w-[260px] max-w-[400px]" *ngFor="let project of projects">
+        <div class="flex flex-col p-2 border rounded h-full">
+          <div class="flex justify-between items-center">
+            <div class="font-semibold text-sm truncate">{{project.name}}</div>
+            <div class="font-semibold text-xxs p-1 bg-blue-100 rounded">{{project.status.replace('_',' ')}}</div>
+          </div>
+          <div class="font-extralight text-xs mt-2">{{project.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-project-create *ngIf="viewDialogue" />

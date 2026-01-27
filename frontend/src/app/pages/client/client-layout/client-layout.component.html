@@ -9,8 +9,8 @@
     [class.hidden]="!isMobileOpen"
     [class.block]="isMobileOpen"
     [class.md:block]="true"
-    [class.w-64]="isOpen"
-    [class.w-12]="!isOpen"
+    [class.w-64]="isOpen || isMobileOpen"
+    [class.w-12]="!isOpen && !isMobileOpen"
   >
     <app-sidebar class="w-full"/>
   </div>

@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
+import {ProjectCreateComponent} from "../project-create/project-create.component";
+import {ProjectClientService} from "../../../../shared/service/client/project-client.service";
+import {Button} from "primeng/button";
 
 @Component({
   selector: 'app-project',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    ProjectCreateComponent,
+    NgIf,
+    Button
   ],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
@@ -97,5 +103,17 @@ export class ProjectComponent {
     },
   ]
 
+  constructor(
+    private projectClientService: ProjectClientService,
+  ) {
+  }
+
+  get viewDialogue(): boolean {
+    return this.projectClientService.viewDialogue;
+  }
+
+  set viewDialogue(value: boolean) {
+    this.projectClientService.viewDialogue = value;
+  }
 
 }

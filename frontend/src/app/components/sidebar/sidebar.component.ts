@@ -22,7 +22,8 @@ export class SidebarComponent {
       name: "Dashboard",
       icon: "layout-dashboard",
       path: '',
-
+      expanded: true,
+      items: [],
     },
     {
       name: "Projects",
@@ -63,6 +64,8 @@ export class SidebarComponent {
     {
       name: "Calendar",
       icon: "calendar",
+      expanded: true,
+      items: [],
     }
   ];
 

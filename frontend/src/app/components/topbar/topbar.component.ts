@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {LucideAngularModule} from "lucide-angular";
 import {CommonService} from "../../shared/service/common/common.service";
+import {ProjectClientService} from "../../shared/service/client/project-client.service";
 
 @Component({
   selector: 'app-topbar',
@@ -13,7 +14,14 @@ import {CommonService} from "../../shared/service/common/common.service";
 })
 export class TopbarComponent {
 
-  constructor(private common:CommonService) {
+  constructor(
+    private common:CommonService,
+    private projectClientService:ProjectClientService
+  ) {
+  }
+
+  showDialog() {
+    this.projectClientService.viewDialogue = !this.projectClientService.viewDialogue;
   }
 
   get isMobileOpen(): boolean {

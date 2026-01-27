@@ -15,7 +15,7 @@ export const ClientRoutes: Routes = [
       {
         path: 'projects',
         loadComponent: () =>
-          import('./project/project.component')
+          import('./project/layout/project.component')
             .then(m => m.ProjectComponent)
       },
       {
