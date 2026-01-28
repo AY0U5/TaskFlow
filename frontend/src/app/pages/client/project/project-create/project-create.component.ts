@@ -1,36 +1,40 @@
 import { Component } from '@angular/core';
 import {ProjectClientService} from "../../../../shared/service/client/project-client.service";
-import {Dialog} from "primeng/dialog";
-import {Button} from "primeng/button";
-import {InputText} from "primeng/inputtext";
-import {FormsModule} from "@angular/forms";
-import {DropdownModule} from "primeng/dropdown";
 import {Project} from "../../../../shared/model/project/project";
+import {LucideAngularModule} from "lucide-angular";
+import {FormsModule} from "@angular/forms";
+import {Dialog} from "primeng/dialog";
+import {InputText} from "primeng/inputtext";
+import {Button} from "primeng/button";
+import {MultiSelect} from "primeng/multiselect";
+import {DropdownModule} from "primeng/dropdown";
+import {Calendar} from "primeng/calendar";
 import {InputTextarea} from "primeng/inputtextarea";
+import {ProjectStatus} from "../../../../shared/model/util/types";
+import {Team} from "../../../../shared/model/team/team";
 
 @Component({
   selector: 'app-project-create',
   standalone: true,
+  templateUrl: './project-create.component.html',
   imports: [
-    Dialog,
-    Button,
-    InputText,
+    LucideAngularModule,
     FormsModule,
+    Dialog,
+    InputText,
+    Button,
+    MultiSelect,
     DropdownModule,
+    Calendar,
     InputTextarea
   ],
-  templateUrl: './project-create.component.html',
   styleUrl: './project-create.component.scss'
 })
 export class ProjectCreateComponent {
 
   private _project: Project = new Project();
-
-  projectStatuses = [
-    { label: 'Planned', value: 'PLANNED' },
-    { label: 'In Progress', value: 'IN_PROGRESS' },
-    { label: 'Completed', value: 'COMPLETED' }
-  ];
+  statuses : Array<ProjectStatus> = [];
+  teams : Array<Team> = [];
 
   constructor(
     private projectClientService: ProjectClientService,
@@ -54,7 +58,13 @@ export class ProjectCreateComponent {
     this._project = value;
   }
 
-  createProject() {
-    this.viewDialogue = false;
+  close() {
+    // emit event or toggle boolean
+    console.log('close modal');
+  }
+
+  submit() {
+    console.log(this.project);
+    // call service here
   }
 }

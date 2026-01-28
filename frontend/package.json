@@ -25,6 +25,7 @@
     "@primeuix/themes": "^2.0.3",
     "express": "^4.18.2",
     "lucide-angular": "^0.562.0",
+    "primeicons": "^7.0.0",
     "primeng": "^18.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
