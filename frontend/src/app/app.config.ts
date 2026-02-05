@@ -6,17 +6,10 @@ import { provideClientHydration } from '@angular/platform-browser';
 import {provideHttpClient, withInterceptors} from "@angular/common/http";
 import {jwtInterceptor} from "./shared/interceptor/jwt.interceptor";
 import {
-  LayoutDashboard,
   LucideAngularModule,
   Presentation,
-  Users,
-  ClipboardList,
-  Settings,
-  PanelLeft,
-  ChevronDown,
-  ChevronRight,
   Calendar,
-  SquarePen
+  Pin
 } from "lucide-angular";
 import {providePrimeNG} from "primeng/config";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
@@ -31,16 +24,9 @@ export const appConfig: ApplicationConfig = {
     ),
     importProvidersFrom(
       LucideAngularModule.pick({
-        LayoutDashboard,
         Presentation,
-        Users,
-        ClipboardList,
-        Settings,
-        PanelLeft,
-        ChevronDown,
-        ChevronRight,
         Calendar,
-        SquarePen
+        Pin
       })
     ),
     provideAnimationsAsync(),

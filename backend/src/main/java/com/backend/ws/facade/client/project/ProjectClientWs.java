@@ -2,6 +2,7 @@ package com.backend.ws.facade.client.project;
 
 import com.backend.bean.project.Project;
 import com.backend.service.facade.client.project.ProjectClientService;
+import com.backend.ws.dto.project.ProjectDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,10 @@ public class ProjectClientWs {
             ProjectClientService service
     ) {
         this.service = service;
+    }
+
+    public List<ProjectDto> findByAuthenticatedUser() {
+        return service.findByAuthenticatedUser();
     }
 
     public List<Project> findByNameAndTeamIdOrderByCreatedDate(String name, Long teamId) {

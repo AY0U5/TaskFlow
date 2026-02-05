@@ -1,25 +1,8 @@
-<div class="flex w-screen h-screen overflow-hidden">
-  <div
-    *ngIf="isMobileOpen"
-    class="fixed inset-0 bg-black/40 z-40 md:hidden"
-    (click)="isMobileOpen = false"
-  ></div>
-  <div
-    class="fixed md:static z-50 h-full bg-white border-r transition-all duration-300"
-    [class.hidden]="!isMobileOpen"
-    [class.block]="isMobileOpen"
-    [class.md:block]="true"
-    [class.w-64]="isOpen || isMobileOpen"
-    [class.w-12]="!isOpen && !isMobileOpen"
-  >
-    <app-sidebar class="w-full"/>
+<div
+  class="flex flex-col h-screen w-screen px-16 py-8"
+>
+  <div>
+    <app-topbar/>
   </div>
-  <div class="flex flex-col flex-1">
-    <div class="place-content-center md:border-b md:p-5 p-3">
-      <app-topbar/>
-    </div>
-    <div class=" flex-1 overflow-auto md:p-5 p-3">
-      <router-outlet/>
-    </div>
-  </div>
+  <div></div>
 </div>

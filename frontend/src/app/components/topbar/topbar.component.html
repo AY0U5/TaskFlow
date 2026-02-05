@@ -1,23 +1,35 @@
-<div class="flex flex-col w-full">
-  <div class="flex justify-between">
-    <lucide-icon name="panel-left" size="20" color="gray" [strokeWidth]="1.5"
-                 class="md:hidden hover:bg-gray-100 m-2 rounded cursor-pointer" (click)="showSideBar()"
-    ></lucide-icon>
-    <lucide-icon name="square-pen" size="20" color="gray" [strokeWidth]="1.5"
-                 class="md:hidden hover:bg-gray-100 m-2 rounded cursor-pointer" (click)="showDialog()"
-    ></lucide-icon>
-  </div>
-  <div class="flex justify-between items-center gap-2">
-    <input
-      class="flex-1 bg-gray-50 py-1 px-4 rounded-full border min-w-1 md:max-w-96"
-      type="text"
-      placeholder="Search Project ..."
+<div class="flex justify-between items-center">
+  <div class="flex gap-2 items-center">
+    <img src="logo.png" alt="LOGO"
+         class="w-8 h-8"
     >
-    <div
-      class="md:block font-semibold text-sm bg-blue-200 px-4 py-1 rounded cursor-pointer hidden"
-      (click)="showDialog()"
-    >
-      New Project
-    </div>
+    <span class="font-sora font-bold">FLOWTASK</span>
   </div>
+  <ul class="flex gap-6 items-center">
+    <li
+      class="flex gap-2 items-center px-2 py-1 border border-Success bg-Success/10 rounded-md
+        cursor-pointer
+      "
+    >
+      <lucide-icon name="presentation" size="16"></lucide-icon>
+      <span class="font-dmSans">Projects</span>
+    </li>
+    <li
+      class="flex gap-2 items-center cursor-pointer"
+    >
+      <lucide-icon name="calendar" size="16"></lucide-icon>
+      <span class="font-dmSans">Calendar</span>
+    </li>
+    <li
+      class="flex gap-2 items-center cursor-pointer"
+    >
+      <lucide-icon name="pin" size="16"></lucide-icon>
+      <span class="font-dmSans">Pinned</span>
+    </li>
+    <li>
+      <img src="profile.png" alt="icon"
+           class="w-7 h-7 rounded-full cursor-pointer"
+      >
+    </li>
+  </ul>
 </div>

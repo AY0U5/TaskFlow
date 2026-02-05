@@ -7,6 +7,13 @@ module.exports = {
     extend: {
       fontSize : {
         xxs: ['8px', '16px']
+      },
+      fontFamily: {
+        sora: "\"Sora\", sans-serif",
+        dmSans : "\"DM Sans\", sans-serif"
+      },
+      colors: {
+        Success: "#10B981",
       }
     },
     screens: {

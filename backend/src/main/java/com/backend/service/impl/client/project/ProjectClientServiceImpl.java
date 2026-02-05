@@ -6,6 +6,8 @@ import com.backend.bean.team.Team;
 import com.backend.dao.project.ProjectDao;
 import com.backend.service.facade.client.project.ProjectClientService;
 import com.backend.service.facade.client.team.TeamClientService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,5 +54,11 @@ public class ProjectClientServiceImpl implements ProjectClientService {
         teams.add(team);
         project.setTeams(teams);
         return dao.save(project);
+    }
+
+    @Override
+    public List<Project> findByAuthenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
     }
 }
