@@ -9,7 +9,9 @@ import {
   LucideAngularModule,
   Presentation,
   Calendar,
-  Pin
+  Pin,
+  Eye,
+  Trash2
 } from "lucide-angular";
 import {providePrimeNG} from "primeng/config";
 import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
@@ -26,7 +28,9 @@ export const appConfig: ApplicationConfig = {
       LucideAngularModule.pick({
         Presentation,
         Calendar,
-        Pin
+        Pin,
+        Eye,
+        Trash2
       })
     ),
     provideAnimationsAsync(),

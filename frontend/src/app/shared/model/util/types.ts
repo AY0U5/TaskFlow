@@ -6,3 +6,14 @@ export type ProjectStatus = 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED' | 'ON_HO
 export type TaskStatus = 'TO_DO' | 'IN_PROGRESS' | 'DONE' | 'CANCELLED' | 'REVIEW'
 
 export type Role = 'MEMBER' | 'MANAGER' | 'OWNER';
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  status: string;
+  statusColor: string;
+  priority: string;
+  priorityColor: string;
+}

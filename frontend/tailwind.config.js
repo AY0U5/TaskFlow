@@ -10,7 +10,8 @@ module.exports = {
       },
       fontFamily: {
         sora: "\"Sora\", sans-serif",
-        dmSans : "\"DM Sans\", sans-serif"
+        dmSans : "\"DM Sans\", sans-serif",
+        outfit: "\"Outfit\", sans-serif"
       },
       colors: {
         Success: "#10B981",
